@@ -21,4 +21,6 @@ import akashapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',akashapp.views.bedroom2bhk),
+    path('welcome/', akashapp.views.welcome_page, name='welcome'),
+
 ]

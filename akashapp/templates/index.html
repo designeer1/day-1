@@ -80,6 +80,16 @@
             font-size: 0.9em;
             color: #666;
         }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -92,7 +102,15 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
-        <div class="footer-text">Welcome, {{ name }} 👋</div>
+        <div class="footer-text">
+            {% if message %}
+                <span class="{% if message == 'Login successful!' %}success{% else %}error{% endif %}">
+                    {{ message }}
+                </span>
+            {% else %}
+                Welcome, {{ name }} 👋
+            {% endif %}
+        </div>
     </div>
 
 </body>
